@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
-public class Day1 {
+public final class Main {
 
     public static void main(String[] args) throws Exception {
         long startTime = System.nanoTime();
@@ -17,10 +17,11 @@ public class Day1 {
         int highestTotal = -1;
 
         /* Total up each block */
-        for (String block : content.split("\n\n")) {
+        for (String block : content.split("\r\n\r\n")) {
+            System.out.println(block);
             int total = 0;
 
-            for (String line : block.split("\n")) {
+            for (String line : block.split("\r\n")) {
                 total += Integer.parseInt(line);
             }
 
