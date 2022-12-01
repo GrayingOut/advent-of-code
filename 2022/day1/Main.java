@@ -18,7 +18,6 @@ public final class Main {
 
         /* Total up each block */
         for (String block : content.split("\r\n\r\n")) {
-            System.out.println(block);
             int total = 0;
 
             for (String line : block.split("\r\n")) {
