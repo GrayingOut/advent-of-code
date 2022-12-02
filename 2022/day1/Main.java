@@ -2,7 +2,6 @@ import java.io.File;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public final class Main {
 
@@ -14,7 +13,6 @@ public final class Main {
         String content = new String(Files.readAllBytes(file.toPath()));
 
         ArrayList<Integer> totals = new ArrayList<>();
-        int highestTotal = -1;
 
         /* Total up each block */
         for (String block : content.split("\r\n\r\n")) {
@@ -25,17 +23,13 @@ public final class Main {
             }
 
             totals.add(total);
-
-            if (total > highestTotal) {
-                highestTotal = total;
-            }
         }
 
-        /* Get total of top 3 */
-        int top3Total = totals.stream()
-            .sorted(Comparator.reverseOrder())
-            .limit(3)
-            .collect(Collectors.summingInt(Integer::intValue));
+        /* Sort and get top total and sum of top 3 total */
+        totals.sort(Comparator.reverseOrder());
+        
+        int highestTotal = totals.get(0);
+        int top3Total = totals.get(0) + totals.get(1) + totals.get(2);
 
         long timeTaken = System.nanoTime() - startTime;
 
