@@ -42,20 +42,7 @@ public final class Main {
             int range2Start = Integer.parseInt(range2.split("-")[0]);
             int range2End = Integer.parseInt(range2.split("-")[1]);
 
-            /* Don't ask me how I got these comparisons */
-            
-            if ((range1Start >= range2Start)
-                    && (range1Start <= range2End)
-                    && (range2Start <= range1End)
-                    && (range2Start <= range1Start)) {
-                overlappedPairs++;
-                continue;
-            }
-
-            if ((range1Start <= range2Start)
-                    && (range1Start <= range2End)
-                    && (range2Start >= range1Start)
-                    && (range2Start <= range1End)) {
+            if ((range1Start <= range2End && range1End >= range2Start)) {
                 overlappedPairs++;
                 continue;
             }
