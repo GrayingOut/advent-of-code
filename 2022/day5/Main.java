@@ -32,7 +32,6 @@ public final class Main {
      * @return The solution
      */
     private static final String part2() {
-        getStacks();
         List<Stack<Character>> stacks = getStacks();
 
         /* I like to move it move it */
