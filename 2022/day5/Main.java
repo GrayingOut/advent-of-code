@@ -22,8 +22,8 @@ public final class Main {
 
         /* Output results */
         System.out.printf("Time: %sms\n", timeTaken/1_000_000);
-        System.out.printf("Stack Tops: %s\n", part1Solution);
-        System.out.printf("Overlapped Pairs: %s\n", part2Solution);
+        System.out.printf("Stack Tops 1: %s\n", part1Solution);
+        System.out.printf("Stack Tops 2: %s\n", part2Solution);
     }
 
     /**
