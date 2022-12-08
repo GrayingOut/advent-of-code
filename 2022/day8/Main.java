@@ -33,7 +33,6 @@ public final class Main {
     private static final int part2() {
         int size = lines.size();
 
-        /* Store the scenic scores - outer = y-axis, inner = x-axis */
         int highestScenicScore = -1;
 
         for (int y = 0; y < size; y++) {
